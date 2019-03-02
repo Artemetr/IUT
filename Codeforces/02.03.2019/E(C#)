@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace E
+{
+    class Program
+    {
+
+        static string pop(int n, int k)
+        {
+            int s;
+
+            if (n == k)
+            {
+                return "0 0";
+            }
+            else
+            if (k == 0)
+            {
+                return "0 0";
+            }
+            else
+            {
+                if ((n / k) >= 2 && n / k < 3)
+                {
+                    s = (n - k);
+
+                }
+                else if (n / k < 2)
+                {
+                    s = (n - k);
+                }
+                else s = (k * 2);
+            }
+
+            return "1 " + s.ToString();
+        }
+
+        static void Main(string[] args)
+        {
+            string str = Console.ReadLine();
+            string[] s = str.Split(new char[] { ' ' });
+            int n = int.Parse(s[0]);
+            int k = int.Parse(s[1]);
+            Console.WriteLine(pop(n, k));
+        }
+    }
+}
