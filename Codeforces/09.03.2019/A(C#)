@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TEST_CS
+{
+    class Program
+    {
+
+        static void pop(int n, int k, int t)
+        {
+            int q;
+
+            if (t - k < 0)
+            {
+                q = k - Math.Abs(t - k);
+            }
+            else if (t - k >= 0 && t <= n)
+            {
+                q = k;
+            }
+            else
+            {
+                q = k - (t - n);
+                if (q < 0) q = 0;
+            }
+
+            Console.WriteLine(q);
+           // Console.ReadKey(); //для отладки
+        }
+
+        static void Main(string[] args)
+        {
+            string str = Console.ReadLine();
+            string[] words = str.Split(new char[] { ' ' });
+            
+            pop(int.Parse(words[0]), int.Parse(words[1]), int.Parse(words[2])); //pop1 - кушает меньше памяти и более быстрый
+        }
+    }
+}
