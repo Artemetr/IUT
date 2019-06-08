@@ -1,0 +1,50 @@
+<Window x:Class="CPark.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CPark"
+        mc:Ignorable="d"
+        Title="CarPark Monitor" Height="311.733" Width="835.6" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" Icon="Resourses/automobile.png">
+    <Grid Height="280" VerticalAlignment="Top" Margin="0,0,4.4,0" Width="824">
+        <ListBox x:Name="list_notifications" HorizontalAlignment="Left" Height="233" Margin="10,10,0,0" VerticalAlignment="Top" Width="613"/>
+        <Button x:Name="btn_out" Content="Отъезд" HorizontalAlignment="Left" Margin="90,250,0,0" VerticalAlignment="Top" Width="19" Click="btn_out_Click" BorderBrush="{x:Null}" Height="19" ToolTip="Активировать возможность выезда машины по указанному номеру.">
+            <Button.Background>
+                <ImageBrush ImageSource="Resourses/garage.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btn_in" Content="" HorizontalAlignment="Left" Margin="68,250,0,0" VerticalAlignment="Top" Width="19" Click="btn_in_Click" BorderBrush="{x:Null}" Height="19" ToolTip="Активировать возможность въезда машины по указанному номеру.">
+            <Button.Background>
+                <ImageBrush ImageSource="Resourses/garage (1).png"/>
+            </Button.Background>
+        </Button>
+        <ListBox x:Name="list_car_in" Height="82" Margin="628,53,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="190" MouseDoubleClick="list_car_in_MouseDoubleClick"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="628,32,0,0" TextWrapping="Wrap" Text="Список машин на стоянке:" VerticalAlignment="Top" Width="175"/>
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="628,140,0,0" TextWrapping="Wrap" Text="Список уехавших машин:" VerticalAlignment="Top" Width="175"/>
+        <ListBox x:Name="list_car_out" HorizontalAlignment="Left" Height="82" Margin="628,161,0,0" VerticalAlignment="Top" Width="190" MouseDoubleClick="list_car_out_MouseDoubleClick"/>
+        <TextBlock x:Name="tb_num" HorizontalAlignment="Left" Margin="628,10,0,0" TextWrapping="Wrap" Text="Машин на стоянке: " VerticalAlignment="Top" Width="175"/>
+        <Button x:Name="btn_delete" Content="" HorizontalAlignment="Left" Margin="35,250,0,0" VerticalAlignment="Top" Width="19" Click="btn_delete_Click" BorderBrush="{x:Null}" Height="20" ToolTip="Удалить право въезда машины с указанным номером на стоянку.">
+            <Button.Background>
+                <ImageBrush ImageSource="Resourses/remove.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btn_save" Content="" HorizontalAlignment="Left" Margin="763,248,0,0" VerticalAlignment="Top" Width="25" Click="btn_save_Click" BorderBrush="{x:Null}" Height="25" ToolTip="Сохранить текущую конфигурацию стоянки.">
+            <Button.Background>
+                <ImageBrush ImageSource="Resourses/floppy-disk.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btn_clear" Content="" HorizontalAlignment="Left" Margin="793,248,0,0" VerticalAlignment="Top" Width="25" Click="btn_clear_Click" Height="25" BorderBrush="{x:Null}" ToolTip="Отчистить текущую конфигурацию стоянки." Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="Resourses/trash.png"/>
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="113,248,0,0" TextWrapping="Wrap" Text="А123БВ" VerticalAlignment="Top" Width="120" ToolTip="Введите шестизначный номер машины в формате Б111ББ" FontSize="14" TextAlignment="Center" MaxLength="6" AutoWordSelection="True"/>
+        <Button x:Name="btn_add" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="21" Click="btn_add_Click" Height="20" BorderBrush="{x:Null}" ToolTip="Добавить машину с указанным номером на свободное парковочное место." Margin="13,250,0,0">
+            <Button.Background>
+                <ImageBrush ImageSource="Resourses/plus.png"/>
+            </Button.Background>
+        </Button>
+        <Border BorderBrush="#7F000000" BorderThickness="1" HorizontalAlignment="Left" Height="23" Margin="59,248,0,0" VerticalAlignment="Top" Width="3"/>
+
+    </Grid>
+</Window>
