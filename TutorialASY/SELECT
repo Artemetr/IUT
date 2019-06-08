@@ -1,0 +1,18 @@
+using (var connection = new SqlConnection(get_cs()))
+            {
+                connection.Open();
+
+                using (var cmd = new SqlCommand("SELECT * FROM [Garage].[dbo].[TableCars]", connection))
+                {
+                    using (var rd = cmd.ExecuteReader())
+                    {
+                        int i = 0;
+                        while (rd.Read())
+                        {                           
+                                cars[i].regNumber = rd.GetValue(1).ToString();
+                                if (rd.GetValue(2).ToString() == "") cars[i].onf = -1; else cars[i].onf = int.Parse(rd.GetValue(2).ToString());
+                                if (rd.GetValue(3).ToString() == "") cars[i].q = -1; else cars[i].q = int.Parse(rd.GetValue(3).ToString());
+                            i++;
+                        }
+                    }
+                }
