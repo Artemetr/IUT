@@ -41,7 +41,7 @@ namespace CPark
 
         public string get_cs()
         {
-            return "Data Source=DESECI\\SQL_MIOD; Initial Catalog = Garage; User ID = sa; Password = fghbjhb";
+            return "Data Source=123456; Initial Catalog = Garage; User ID = sa; Password = 123456";
         }
 
         private void btn_out_Click(object sender, RoutedEventArgs e)
