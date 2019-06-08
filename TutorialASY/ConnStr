@@ -1,0 +1,4 @@
+        public string get_cs()
+        {
+            return "Data Source=123456; Initial Catalog = Garage; User ID = sa; Password = 123456";
+        }
